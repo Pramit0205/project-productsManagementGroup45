@@ -1,0 +1,10 @@
+Save the password for every user we create in MongoDB;
+
+Users:
+
+1. "fname": "John",
+   "lname": "Doe",
+   "email": "johndoe@mailinator.com",
+   "password": "Qwerty@123"
+            OR
+    "password": "Qwerty@12345"  
