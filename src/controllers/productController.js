@@ -18,7 +18,7 @@ const addProduct = async (req, res) => {
     if(checkTitle) return res.status(400).send({ status: false, message: "Title already exist" });
 
     //checking for product description
-    if(validate.isValid(data.description) && validate.isValidString(data.description)) return res.status(400).send({ status: false, message: "Title is required and should not be an empty string or any numbers in it" });
+    if(validate.isValid(data.description) && validate.isValidString(data.description)) return res.status(400).send({ status: false, message: "Description is required and should not be an empty string or any numbers in it" });
 
     //checking for product price
     if(!(validate.isValidString(data.price) && validate.isValidPrice(data.price))) return res.status(400).send({ status: false, message: "Price of product should be valid and in numbers" });

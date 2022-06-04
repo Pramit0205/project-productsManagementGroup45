@@ -90,7 +90,6 @@ const addCart = async (req, res) => {
       tempCart.totalPrice += checkProduct.price * data.quantity
     }
 
-    
     tempCart.totalPrice = tempCart.totalPrice.toFixed(2);
     tempCart.totalItems = tempCart.items.length
 
@@ -219,10 +218,9 @@ const deleteCart = async (req, res) =>{
     //checking for an empty cart
     if(findCart.items.length == 0) return res.status(400).send({ status: false, message: "Cart is already empty" });
 
-    await Cart.findByIdAndUpdate(
+    await Cart.updateOne(
       {_id: findCart._id},
       {items: [], totalPrice: 0, totalItems: 0},
-      {new: true}
     )
 
     res.status(204).send({ status: true, message: "Success"})
